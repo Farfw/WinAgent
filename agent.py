@@ -1,132 +1,112 @@
-import requests
-import threading
-import time
-import webbrowser
+import yaml
 import random
-import tkinter as tk
-from tkinter import ttk, messagebox
+import subprocess
+import time
+import os
+from datetime import datetime
+from pathlib import Path
 
-BASE_URL = "http://localhost:8000"
+from utils.logger import setup_logger
 
-# === API ===
-def fetch_agent_list():
-    try:
-        res = requests.get(f"{BASE_URL}/api/agents")
-        res.raise_for_status()
-        return res.json()
-    except Exception as e:
-        messagebox.showerror("Error", f"Failed to fetch agent list:\n{e}")
-        return []
+logger = setup_logger()
 
-def fetch_agent_config(agent_id):
-    try:
-        res = requests.get(f"{BASE_URL}/api/agents/{agent_id}/config/download")
-        res.raise_for_status()
-        return res.json()
-    except Exception as e:
-        messagebox.showerror("Error", f"Failed to fetch agent config:\n{e}")
-        return None
+CONFIG_PATH = Path("config/settings.yaml")
+PATHS_PATH = Path("config/paths.yaml")
+ROLES_DIR = Path("roles")
 
-# === Task implementations ===
-def open_browser(url="https://example.com"):
-    print(f"[+] Opening browser: {url}")
-    webbrowser.open(url)
 
-def simulate_activity(duration=5):
-    print(f"[+] Simulating user activity for {duration} seconds...")
-    for i in range(duration):
-        print(f"    ...activity... ({i+1}s)")
-        time.sleep(1)
+def load_yaml(path):
+    with open(path, encoding='utf-8') as f:
+        return yaml.safe_load(f)
 
-def start_explorer():
-    print("[+] Launching File Explorer")
-    import subprocess
-    subprocess.Popen("explorer")
 
-def start_calc():
-    print("[+] Launching Calculator")
-    import subprocess
-    subprocess.Popen("calc")
+def load_config():
+    settings = load_yaml(CONFIG_PATH)
+    paths = load_yaml(PATHS_PATH)
+    role_name = settings["role"]
+    role_file = ROLES_DIR / f"{role_name}.yaml"
+    role = load_yaml(role_file)
+    return settings, paths, role
 
-# Mapping task names to functions
-TASK_MAP = {
-    "open_browser": open_browser,
-    "simulate_activity": simulate_activity,
-    "start_explorer": start_explorer,
-    "start_calc": start_calc,
-}
 
-# === Run agent tasks ===
-def run_tasks(agent_config):
-    tasks = agent_config.get("behavior_template", {}).get("tasks", [])
-    interval = agent_config.get("custom_config", {}).get("interval", 5)
-    randomize = agent_config.get("custom_config", {}).get("randomize", False)
+def weighted_choice(activities):
+    weights = [a.get("weight", 1) for a in activities]
+    return random.choices(activities, weights=weights, k=1)[0]
 
-    for task in tasks:
-        func = TASK_MAP.get(task)
-        if func:
-            func()
+
+def run_action(action, paths):
+    action_type = action["action"]
+
+    if action_type == "open_app":
+        app_name = action["app"]
+        path = paths["apps"].get(app_name)
+        if path:
+            logger.info(f"Запуск приложения: {path}")
+            subprocess.Popen([path], shell=True)
         else:
-            print(f"[!] Unknown task: {task}")
+            logger.warning(f"Неизвестное приложение: {app_name}")
 
-        wait = random.randint(1, interval * 2) if randomize else interval
-        print(f"[*] Waiting {wait} seconds...\n")
-        time.sleep(wait)
+    elif action_type == "open_browser":
+        urls = action["urls"]
+        url = random.choice(urls)
+        logger.info(f"Открытие браузера по ссылке: {url}")
+        subprocess.Popen(["start", "", url], shell=True)
 
-# === GUI ===
-class AgentGUI(tk.Tk):
-    def __init__(self):
-        super().__init__()
-        self.title("Agent Runner")
-        self.geometry("400x300")
-        self.agent_list = []
-        self.current_config = None
+    elif action_type == "run_terminal_command":
+        terminal = action["terminal"]
+        command = action["command"]
+        term_path = paths["apps"].get(terminal)
+        if term_path:
+            logger.info(f"Выполнение команды в {terminal}: {command}")
+            subprocess.Popen([term_path, "/c", command], shell=True)
+        else:
+            logger.warning(f"Неизвестный терминал: {terminal}")
 
-        self.create_widgets()
-        self.load_agents()
+    elif action_type == "edit_file":
+        path = os.path.expandvars(action["path"])
+        logger.info(f"Открытие файла: {path}")
+        subprocess.Popen(["start", "", path], shell=True)
 
-    def create_widgets(self):
-        ttk.Label(self, text="Select an agent:").pack(pady=5)
+    elif action_type == "sleep":
+        seconds = action.get("seconds", 60)
+        logger.info(f"Пауза на {seconds} секунд")
+        time.sleep(seconds)
 
-        self.agent_combo = ttk.Combobox(self, state="readonly")
-        self.agent_combo.pack(fill="x", padx=20)
-        self.agent_combo.bind("<<ComboboxSelected>>", self.on_agent_selected)
+    else:
+        logger.error(f"Неизвестное действие: {action_type}")
 
-        ttk.Label(self, text="Tasks:").pack(pady=5)
-        self.task_listbox = tk.Listbox(self, height=8)
-        self.task_listbox.pack(fill="both", expand=True, padx=20)
 
-        self.run_button = ttk.Button(self, text="Run Tasks", command=self.on_run_clicked)
-        self.run_button.pack(pady=10)
+def is_work_time(settings):
+    now = datetime.now()
+    weekday = now.isoweekday()
+    current_time = now.time()
+    work_days = settings["work_days"]
+    start = datetime.strptime(settings["work_start"], "%H:%M").time()
+    end = datetime.strptime(settings["work_end"], "%H:%M").time()
+    return weekday in work_days and start <= current_time <= end
 
-    def load_agents(self):
-        self.agent_list = fetch_agent_list()
-        items = [agent["agent_id"] for agent in self.agent_list]
-        self.agent_combo["values"] = items
-        if items:
-            self.agent_combo.current(0)
-            self.on_agent_selected()
 
-    def on_agent_selected(self, event=None):
-        agent_id = self.agent_combo.get()
-        self.current_config = fetch_agent_config(agent_id)
-        self.update_task_list()
+def main():
+    settings, paths, role = load_config()
+    activities = role["activities"]
 
-    def update_task_list(self):
-        self.task_listbox.delete(0, tk.END)
-        if not self.current_config:
-            return
-        tasks = self.current_config.get("behavior_template", {}).get("tasks", [])
-        for task in tasks:
-            self.task_listbox.insert(tk.END, task)
+    logger.info("Агент LISA запущен под Windows")
 
-    def on_run_clicked(self):
-        if not self.current_config:
-            messagebox.showwarning("Missing configuration", "Please select an agent first.")
-            return
-        threading.Thread(target=run_tasks, args=(self.current_config,), daemon=True).start()
+    while True:
+        if is_work_time(settings):
+            activity = weighted_choice(activities)
+            run_action(activity, paths)
 
-# === Run application ===
+            interval = random.randint(
+                settings["activity_interval_min"],
+                settings["activity_interval_max"]
+            )
+            logger.info(f"Следующее действие через {interval} секунд")
+            time.sleep(interval)
+        else:
+            logger.info("Вне рабочего времени. Пауза 5 минут")
+            time.sleep(300)
+
+
 if __name__ == "__main__":
-    app = AgentGUI()
-    app.mainloop()
+    main()
