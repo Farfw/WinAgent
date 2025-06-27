@@ -50,7 +50,7 @@ VALUES
     1,
     'active',
     'Windows',
-    '{"interval": 10, "randomize": true}',
+    '{"interval": 1, "randomize": true}',
     'explorer.exe',
     'medium',
     NOW(),

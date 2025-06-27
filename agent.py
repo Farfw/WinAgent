@@ -1,10 +1,16 @@
-import yaml
-import random
-import subprocess
-import time
+import logging
 import os
+import random
+import time
 from datetime import datetime
 from pathlib import Path
+
+import yaml
+
+from actions import apps, files, net
+from client.server_api import send_activity, download_agent_config
+
+AGENT_ID = "agent_001"
 
 from utils.logger import setup_logger
 
@@ -35,45 +41,44 @@ def weighted_choice(activities):
 
 
 def run_action(action, paths):
-    action_type = action["action"]
+    action_type = action.get("action")
 
     if action_type == "open_app":
-        app_name = action["app"]
-        path = paths["apps"].get(app_name)
+        app_name = action.get("app")
+        path = paths.get("apps", {}).get(app_name)
         if path:
-            logger.info(f"Запуск приложения: {path}")
-            subprocess.Popen([path], shell=True)
+            apps.open_app(path)
         else:
-            logger.warning(f"Неизвестное приложение: {app_name}")
+            logging.warning(f"Неизвестное приложение: {app_name}")
 
     elif action_type == "open_browser":
-        urls = action["urls"]
+        urls = action.get("urls", ["https://example.com"])
         url = random.choice(urls)
-        logger.info(f"Открытие браузера по ссылке: {url}")
-        subprocess.Popen(["start", "", url], shell=True)
+        apps.open_browser(url)
 
     elif action_type == "run_terminal_command":
-        terminal = action["terminal"]
-        command = action["command"]
-        term_path = paths["apps"].get(terminal)
+        terminal = action.get("terminal")
+        command = action.get("command")
+        term_path = paths.get("apps", {}).get(terminal)
         if term_path:
-            logger.info(f"Выполнение команды в {terminal}: {command}")
-            subprocess.Popen([term_path, "/c", command], shell=True)
+            apps.run_terminal_command(term_path, command)
         else:
-            logger.warning(f"Неизвестный терминал: {terminal}")
+            logging.warning(f"Неизвестный терминал: {terminal}")
 
     elif action_type == "edit_file":
-        path = os.path.expandvars(action["path"])
-        logger.info(f"Открытие файла: {path}")
-        subprocess.Popen(["start", "", path], shell=True)
+        path = os.path.expandvars(action.get("path", ""))
+        files.edit_file(path)
 
     elif action_type == "sleep":
         seconds = action.get("seconds", 60)
-        logger.info(f"Пауза на {seconds} секунд")
+        logging.info(f"Пауза на {seconds} секунд")
         time.sleep(seconds)
 
+    elif action_type == "simulate_activity":
+        net.simulate_network_activity()
+
     else:
-        logger.error(f"Неизвестное действие: {action_type}")
+        logging.error(f"Неизвестное действие: {action_type}")
 
 
 def is_work_time(settings):
@@ -87,25 +92,31 @@ def is_work_time(settings):
 
 
 def main():
-    settings, paths, role = load_config()
-    activities = role["activities"]
+    logger.info("Запуск агента LISA с конфигурацией по ID")
 
-    logger.info("Агент LISA запущен под Windows")
+    config = download_agent_config(AGENT_ID)
+    if not config:
+        logger.error("Конфигурация агента не получена. Завершение.")
+        return
+
+    interval = config.get("custom_config", {}).get("interval", 10)
+    randomize = config.get("custom_config", {}).get("randomize", True)
+    tasks = config.get("behavior_template", {}).get("tasks", [])
+
+    if not tasks:
+        logger.error("Шаблон задач пуст. Завершение.")
+        return
+
+    logger.info(f"Агент: {AGENT_ID}, Интервал: {interval}, Задачи: {tasks}")
 
     while True:
-        if is_work_time(settings):
-            activity = weighted_choice(activities)
-            run_action(activity, paths)
+        task = random.choice(tasks) if randomize else tasks[0]
+        action = {"action": task}
+        run_action(action, paths={})  # paths можно убрать, если не используется
 
-            interval = random.randint(
-                settings["activity_interval_min"],
-                settings["activity_interval_max"]
-            )
-            logger.info(f"Следующее действие через {interval} секунд")
-            time.sleep(interval)
-        else:
-            logger.info("Вне рабочего времени. Пауза 5 минут")
-            time.sleep(300)
+        send_activity(AGENT_ID, task, {"status": "ok"})
+        logger.info(f"Ожидание {interval} секунд")
+        time.sleep(interval)
 
 
 if __name__ == "__main__":
