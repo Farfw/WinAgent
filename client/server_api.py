@@ -1,7 +1,9 @@
-import requests
 import logging
 
+import requests
+
 BASE_URL = "http://localhost:8000/api"  # или IP адрес сервера LISA
+
 
 def generate_agent_config(role_id: int, template_id: int):
     url = f"{BASE_URL}/agents/generate"
@@ -16,6 +18,7 @@ def generate_agent_config(role_id: int, template_id: int):
     except Exception as e:
         logging.error(f"Ошибка при генерации конфига агента: {e}")
         return None
+
 
 def download_agent_config(agent_id: str):
     url = f"{BASE_URL}/agents/{agent_id}/config/download?format=json"
@@ -37,6 +40,7 @@ def fetch_template(template_id):
     except Exception as e:
         logging.error(f"Ошибка при получении шаблона поведения: {e}")
         return None
+
 
 def send_activity(agent_id, action, data=None):
     url = f"{BASE_URL}/agent_activities"
