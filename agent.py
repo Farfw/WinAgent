@@ -2,6 +2,7 @@ import getpass
 import logging
 import os
 import random
+import sys
 import time
 import uuid
 from datetime import datetime
@@ -13,17 +14,37 @@ from actions import apps, files, net
 from client.server_api import send_activity, download_agent_config
 from utils.logger import setup_logger
 
-# Имя пользователя Windows
+# === Генерация уникального AGENT_ID ===
+
 username = getpass.getuser()
-
-# Чтение MAC-адреса и приведение к формату без двоеточий
 mac_int = uuid.getnode()
-mac_str = f"{mac_int:012x}"  # 12 символов HEX
-
-# Комбинация: user + MAC
+mac_str = f"{mac_int:012x}"
 AGENT_ID = f"agent_{username}_{mac_str}".lower()
 
+# === Инициализация логгера ===
 logger = setup_logger()
+
+# === Singleton: файл-блокировка ===
+
+LOCK_FILE = Path(f"{AGENT_ID}.lock")
+
+
+def check_singleton():
+    if LOCK_FILE.exists():
+        logger.error(f"Агент с ID {AGENT_ID} уже запущен! Завершение.")
+        sys.exit(1)
+    else:
+        LOCK_FILE.touch()
+        logger.info(f"Создан файл-блокировка {LOCK_FILE}")
+
+
+def cleanup_singleton():
+    if LOCK_FILE.exists():
+        LOCK_FILE.unlink()
+        logger.info(f"Файл-блокировка {LOCK_FILE} удалён")
+
+
+# === Пути к локальным конфигам (если используются) ===
 
 CONFIG_PATH = Path("config/settings.yaml")
 PATHS_PATH = Path("config/paths.yaml")
@@ -44,10 +65,14 @@ def load_config():
     return settings, paths, role
 
 
+# === Выбор случайной активности по весам ===
+
 def weighted_choice(activities):
     weights = [a.get("weight", 1) for a in activities]
     return random.choices(activities, weights=weights, k=1)[0]
 
+
+# === Основной исполнитель действий ===
 
 def run_action(action, paths):
     action_type = action.get("action")
@@ -90,6 +115,8 @@ def run_action(action, paths):
         logging.error(f"Неизвестное действие: {action_type}")
 
 
+# === Проверка рабочего времени ===
+
 def is_work_time(settings):
     now = datetime.now()
     weekday = now.isoweekday()
@@ -100,33 +127,42 @@ def is_work_time(settings):
     return weekday in work_days and start <= current_time <= end
 
 
+# === Основной цикл ===
+
 def main():
+    check_singleton()
     logger.info("Запуск агента LISA с конфигурацией по ID")
 
-    config = download_agent_config(AGENT_ID)
-    if not config:
-        logger.error("Конфигурация агента не получена. Завершение.")
-        return
+    try:
+        config = download_agent_config(AGENT_ID)
+        if not config:
+            logger.error("Конфигурация агента не получена. Завершение.")
+            return
 
-    interval = config.get("custom_config", {}).get("interval", 10)
-    randomize = config.get("custom_config", {}).get("randomize", True)
-    tasks = config.get("behavior_template", {}).get("tasks", [])
+        interval = config.get("custom_config", {}).get("interval", 10)
+        randomize = config.get("custom_config", {}).get("randomize", True)
+        tasks = config.get("behavior_template", {}).get("tasks", [])
 
-    if not tasks:
-        logger.error("Шаблон задач пуст. Завершение.")
-        return
+        if not tasks:
+            logger.error("Шаблон задач пуст. Завершение.")
+            return
 
-    logger.info(f"Агент: {AGENT_ID}, Интервал: {interval}, Задачи: {tasks}")
+        logger.info(f"Агент: {AGENT_ID}, Интервал: {interval}, Задачи: {tasks}")
 
-    while True:
-        task = random.choice(tasks) if randomize else tasks[0]
-        action = {"action": task}
-        run_action(action, paths={})  # paths можно убрать, если не используется
+        while True:
+            task = random.choice(tasks) if randomize else tasks[0]
+            action = {"action": task}
+            run_action(action, paths={})
 
-        send_activity(AGENT_ID, task, {"status": "ok"})
-        logger.info(f"Ожидание {interval} секунд")
-        time.sleep(interval)
+            send_activity(AGENT_ID, task, {"status": "ok"})
+            logger.info(f"Ожидание {interval} секунд")
+            time.sleep(interval)
 
+    finally:
+        cleanup_singleton()
+
+
+# === Запуск ===
 
 if __name__ == "__main__":
     main()
