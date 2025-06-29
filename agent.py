@@ -2,6 +2,7 @@ import logging
 import os
 import random
 import time
+import uuid
 from datetime import datetime
 from pathlib import Path
 
@@ -9,6 +10,10 @@ import yaml
 
 from actions import apps, files, net
 from client.server_api import send_activity, download_agent_config
+
+mac = uuid.getnode()
+mac_str = ':'.join(f'{(mac >> ele) & 0xff:02x}' for ele in range(40, -1, -8))
+agent_id = f"agent_{mac:012x}"  # 12-значный hex без разделителей
 
 AGENT_ID = "agent_001"
 
