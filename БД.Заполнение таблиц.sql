@@ -27,7 +27,29 @@ VALUES ('Default Template',
         '{"tasks": ["start_explorer", "start_calc", "simulate_activity"], "interval": 5}',
         'Windows',
         'v1.0',
+        TRUE),
+       -- === Новый шаблон с полным набором действий === (
+       ('Full Test Template',
+        2, -- Admin role_id
+        '{
+          "tasks": [
+            {"action": "open_app", "app": "word", "delay": 2, "weight": 2},
+            {"action": "open_app", "app": "docker", "delay": 1, "weight": 2},
+            {"action": "open_browser", "urls": ["https://admin.microsoft.com", "https://docs.microsoft.com"], "delay": 2, "weight": 3},
+            {"action": "run_terminal_command", "terminal": "powershell", "command": "Get-Service", "delay": 2, "weight": 2},
+            {"action": "edit_file", "path": "C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt", "delay": 2, "weight": 1},
+            {"action": "simulate_activity", "weight": 1},
+            {"action": "os_settings", "weight": 1},
+            {"action": "ad_utilities", "weight": 1},
+            {"action": "sleep", "seconds": 10, "weight": 1},
+            {"action": "terminate", "delay": 5, "weight": 1}
+          ],
+          "interval": 10
+        }',
+        'Windows',
+        'v1.0',
         TRUE);
+
 
 -- === Таблица agents ===
 INSERT INTO public.agents (agent_id, name, role_id, template_id, status, os_type, config,
@@ -57,10 +79,10 @@ VALUES ('agent_001',
        ('agent_admin_dc1ba1be30dd',
         'Admin Workstation',
         2, -- role_id для Admin (согласно твоему INSERT в roles)
-        1, -- используем первый шаблон behavior_templates
+        3, -- используем первый шаблон behavior_templates
         'active',
         'Windows',
-        '{"interval": 10, "randomize": true}',
+        '{"interval": 10, "randomize": false}',
         'explorer.exe',
         'medium',
         NOW(),

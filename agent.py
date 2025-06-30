@@ -2,7 +2,6 @@ import getpass
 import logging
 import os
 import random
-import sys
 import time
 import uuid
 from datetime import datetime
@@ -74,13 +73,27 @@ def weighted_choice(activities):
 
 # === Основной исполнитель действий ===
 
+import sys
+
+
 def run_action(action, paths):
     action_type = action.get("action")
+
+    # Задержка перед выполнением, если указана
+    delay = action.get("delay")
+    if delay:
+        logging.info(f"Задержка {delay} секунд перед действием {action_type}")
+        time.sleep(delay)
 
     if action_type == "open_app":
         app_name = action.get("app")
         path = paths.get("apps", {}).get(app_name)
-        if path:
+
+        if path == "ms-settings:":
+            apps.open_settings()
+        elif "dsa.msc" in path:
+            apps.open_ad_utilities()
+        elif path:
             apps.open_app(path)
         else:
             logging.warning(f"Неизвестное приложение: {app_name}")
@@ -105,11 +118,31 @@ def run_action(action, paths):
 
     elif action_type == "sleep":
         seconds = action.get("seconds", 60)
-        logging.info(f"Пауза на {seconds} секунд")
+        logging.info(f"Пауза (sleep) на {seconds} секунд")
         time.sleep(seconds)
 
     elif action_type == "simulate_activity":
         net.simulate_network_activity()
+
+    elif action_type == "terminate":
+        logging.info("Выполняется завершение агента по сценарию.")
+        sys.exit(0)
+
+    elif action_type == "os_settings":
+        apps.open_settings()
+
+    elif action_type == "ad_utilities":
+        apps.open_ad_utilities()
+
+
+    elif action_type == "conditional_exit":
+        condition = action.get("condition")
+        # Пример: проверка нерабочего времени
+        if condition == "not_work_time" and not is_work_time({}):  # передай settings если нужно
+            logging.info("Условие выполнено: агент завершает работу.")
+            sys.exit(0)
+        else:
+            logging.info("Условие для завершения не выполнено — агент продолжает работу.")
 
     else:
         logging.error(f"Неизвестное действие: {action_type}")
@@ -148,15 +181,24 @@ def main():
             return
 
         logger.info(f"Агент: {AGENT_ID}, Интервал: {interval}, Задачи: {tasks}")
+        settings, paths, _ = load_config()
 
-        while True:
-            task = random.choice(tasks) if randomize else tasks[0]
-            action = {"action": task}
-            run_action(action, paths={})
+        if randomize:
+            while True:
+                task = weighted_choice(tasks)
+                run_action(task, paths=paths)
 
-            send_activity(AGENT_ID, task, {"status": "ok"})
-            logger.info(f"Ожидание {interval} секунд")
-            time.sleep(interval)
+                send_activity(AGENT_ID, task, {"status": "ok"})
+                logger.info(f"Ожидание {interval} секунд")
+                time.sleep(interval)
+        else:
+            while True:
+                for task in tasks:
+                    run_action(task, paths=paths)
+
+                    send_activity(AGENT_ID, task, {"status": "ok"})
+                    logger.info(f"Ожидание {interval} секунд")
+                    time.sleep(interval)
 
     finally:
         cleanup_singleton()
