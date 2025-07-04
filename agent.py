@@ -30,17 +30,17 @@ LOCK_FILE = Path(f"{AGENT_ID}.lock")
 
 def check_singleton():
     if LOCK_FILE.exists():
-        logger.error(f"Агент с ID {AGENT_ID} уже запущен! Завершение.")
+        logger.error(f"The agent with the ID {AGENT_ID} has already been launched! Completion.")
         sys.exit(1)
     else:
         LOCK_FILE.touch()
-        logger.info(f"Создан файл-блокировка {LOCK_FILE}")
+        logger.info(f"A blocking file has been created {LOCK_FILE}")
 
 
 def cleanup_singleton():
     if LOCK_FILE.exists():
         LOCK_FILE.unlink()
-        logger.info(f"Файл-блокировка {LOCK_FILE} удалён")
+        logger.info(f"The lock file {LOCK_FILE} has been deleted")
 
 
 # === Пути к локальным конфигам (если используются) ===
@@ -82,7 +82,7 @@ def run_action(action, paths):
     # Задержка перед выполнением, если указана
     delay = action.get("delay")
     if delay:
-        logging.info(f"Задержка {delay} секунд перед действием {action_type}")
+        logging.info(f"Delay of {delay} seconds before the action {action_type}")
         time.sleep(delay)
 
     if action_type == "open_app":
@@ -96,7 +96,7 @@ def run_action(action, paths):
         elif path:
             apps.open_app(path)
         else:
-            logging.warning(f"Неизвестное приложение: {app_name}")
+            logging.warning(f"Unknown application: {app_name}")
 
     elif action_type == "open_browser":
         urls = action.get("urls", ["https://example.com"])
@@ -110,7 +110,7 @@ def run_action(action, paths):
         if term_path:
             apps.run_terminal_command(term_path, command)
         else:
-            logging.warning(f"Неизвестный терминал: {terminal}")
+            logging.warning(f"Unknown terminal: {terminal}")
 
     elif action_type == "edit_file":
         path = os.path.expandvars(action.get("path", ""))
@@ -118,14 +118,14 @@ def run_action(action, paths):
 
     elif action_type == "sleep":
         seconds = action.get("seconds", 60)
-        logging.info(f"Пауза (sleep) на {seconds} секунд")
+        logging.info(f"Pause (sleep) for {seconds} seconds")
         time.sleep(seconds)
 
     elif action_type == "simulate_activity":
         net.simulate_network_activity()
 
     elif action_type == "terminate":
-        logging.info("Выполняется завершение агента по сценарию.")
+        logging.info("The agent is being terminated according to the script.")
         sys.exit(0)
 
     elif action_type == "os_settings":
@@ -139,13 +139,13 @@ def run_action(action, paths):
         condition = action.get("condition")
         # Пример: проверка нерабочего времени
         if condition == "not_work_time" and not is_work_time({}):  # передай settings если нужно
-            logging.info("Условие выполнено: агент завершает работу.")
+            logging.info("The condition is met: the agent is shutting down.")
             sys.exit(0)
         else:
-            logging.info("Условие для завершения не выполнено — агент продолжает работу.")
+            logging.info("The completion condition is not met — the agent continues to work.")
 
     else:
-        logging.error(f"Неизвестное действие: {action_type}")
+        logging.error(f"Unknown action: {action_type}")
 
 
 # === Проверка рабочего времени ===
@@ -164,12 +164,12 @@ def is_work_time(settings):
 
 def main():
     check_singleton()
-    logger.info("Запуск агента LISA с конфигурацией по ID")
+    logger.info("Launching the LISA agent with the configuration by ID")
 
     try:
         config = download_agent_config(AGENT_ID)
         if not config:
-            logger.error("Конфигурация агента не получена. Завершение.")
+            logger.error("The agent configuration was not received. Completion.")
             return
 
         interval = config.get("custom_config", {}).get("interval", 10)
@@ -177,10 +177,10 @@ def main():
         tasks = config.get("behavior_template", {}).get("tasks", [])
 
         if not tasks:
-            logger.error("Шаблон задач пуст. Завершение.")
+            logger.error("The task template is empty. Completion.")
             return
 
-        logger.info(f"Агент: {AGENT_ID}, Интервал: {interval}, Задачи: {tasks}")
+        logger.info(f"Agent: {AGENT_ID}, Interval: {interval}, Tasks: {tasks}")
         settings, paths, _ = load_config()
 
         if randomize:
@@ -189,7 +189,7 @@ def main():
                 run_action(task, paths=paths)
 
                 send_activity(AGENT_ID, task, {"status": "ok"})
-                logger.info(f"Ожидание {interval} секунд")
+                logger.info(f"Waiting {interval} seconds")
                 time.sleep(interval)
         else:
             while True:
@@ -197,7 +197,7 @@ def main():
                     run_action(task, paths=paths)
 
                     send_activity(AGENT_ID, task, {"status": "ok"})
-                    logger.info(f"Ожидание {interval} секунд")
+                    logger.info(f"Waiting {interval} seconds")
                     time.sleep(interval)
 
     finally:

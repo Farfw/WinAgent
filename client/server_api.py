@@ -16,7 +16,7 @@ def generate_agent_config(role_id: int, template_id: int):
         response.raise_for_status()
         return response.json()
     except Exception as e:
-        logging.error(f"Ошибка при генерации конфига агента: {e}")
+        logging.error(f"Error when generating the agent configuration: {e}")
         return None
 
 
@@ -27,7 +27,7 @@ def download_agent_config(agent_id: str):
         response.raise_for_status()
         return response.json()
     except Exception as e:
-        logging.error(f"Ошибка при загрузке конфига агента: {e}")
+        logging.error(f"Error loading the agent configuration: {e}")
         return None
 
 

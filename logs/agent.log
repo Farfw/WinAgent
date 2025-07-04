@@ -390,3 +390,10 @@
 2025-06-30 17:49:42,901 [INFO] Задержка 5 секунд перед действием terminate
 2025-06-30 17:49:47,902 [INFO] Выполняется завершение агента по сценарию.
 2025-06-30 17:49:47,902 [INFO] Файл-блокировка agent_admin_dc1ba1be30dd.lock удалён
+2025-06-30 18:12:49,356 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-06-30 18:12:49,356 [INFO] Launching the LISA agent with the configuration by ID
+2025-06-30 18:12:51,406 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-06-30 18:12:51,410 [INFO] Delay of 2 seconds before the action open_app
+2025-06-30 18:12:53,415 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-06-30 18:12:55,448 [INFO] Waiting 10 seconds
+2025-06-30 18:12:58,173 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
