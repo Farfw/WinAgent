@@ -397,3 +397,218 @@
 2025-06-30 18:12:53,415 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
 2025-06-30 18:12:55,448 [INFO] Waiting 10 seconds
 2025-06-30 18:12:58,173 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-04 19:48:12,637 [INFO] A blocking file has been created agent_admin_2cf05d6707da.lock
+2025-07-04 19:48:12,637 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-04 19:48:14,736 [ERROR] Error loading the agent configuration: 404 Client Error: Not Found for url: http://localhost:8000/api/agents/agent_admin_2cf05d6707da/config/download?format=json
+2025-07-04 19:48:14,736 [ERROR] The agent configuration was not received. Completion.
+2025-07-04 19:48:14,736 [INFO] The lock file agent_admin_2cf05d6707da.lock has been deleted
+2025-07-04 21:03:29,159 [INFO] A blocking file has been created agent_admin_2cf05d6707da.lock
+2025-07-04 21:03:29,160 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-04 21:03:31,211 [ERROR] Error loading the agent configuration: 404 Client Error: Not Found for url: http://localhost:8000/api/agents/agent_admin_2cf05d6707da/config/download?format=json
+2025-07-04 21:03:31,211 [ERROR] The agent configuration was not received. Completion.
+2025-07-04 21:03:31,211 [INFO] The lock file agent_admin_2cf05d6707da.lock has been deleted
+2025-07-04 21:16:44,964 [INFO] A blocking file has been created agent_admin_2cf05d6707da.lock
+2025-07-04 21:16:44,964 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-04 21:16:47,017 [ERROR] Error loading the agent configuration: 404 Client Error: Not Found for url: http://localhost:8000/api/agents/agent_admin_2cf05d6707da/config/download?format=json
+2025-07-04 21:16:47,018 [ERROR] The agent configuration was not received. Completion.
+2025-07-04 21:16:47,018 [INFO] The lock file agent_admin_2cf05d6707da.lock has been deleted
+2025-07-04 21:50:33,099 [INFO] A blocking file has been created agent_admin_2cf05d6707da.lock
+2025-07-04 21:50:33,100 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-04 21:50:35,133 [ERROR] Error loading the agent configuration: 404 Client Error: Not Found for url: http://localhost:8000/api/agents/agent_admin_2cf05d6707da/config/download?format=json
+2025-07-04 21:50:35,133 [ERROR] The agent configuration was not received. Completion.
+2025-07-04 21:50:35,133 [INFO] The lock file agent_admin_2cf05d6707da.lock has been deleted
+2025-07-04 21:54:46,584 [INFO] A blocking file has been created agent_admin_2cf05d6707da.lock
+2025-07-04 21:54:46,584 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-04 21:54:48,642 [ERROR] Error loading the agent configuration: 404 Client Error: Not Found for url: http://localhost:8000/api/agents/agent_admin_2cf05d6707da/config/download?format=json
+2025-07-04 21:54:48,642 [ERROR] The agent configuration was not received. Completion.
+2025-07-04 21:54:48,643 [INFO] The lock file agent_admin_2cf05d6707da.lock has been deleted
+2025-07-05 15:46:10,672 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 15:46:10,672 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 15:46:12,805 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 15:46:12,829 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 15:46:14,834 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 15:46:16,880 [INFO] Waiting 10 seconds
+2025-07-05 15:46:26,881 [INFO] Delay of 1 seconds before the action open_app
+2025-07-05 15:46:27,888 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-05 15:46:29,931 [INFO] Waiting 10 seconds
+2025-07-05 15:46:39,931 [INFO] Delay of 2 seconds before the action open_browser
+2025-07-05 15:46:41,944 [INFO] The browser opened the URL: https://docs.microsoft.com
+2025-07-05 15:46:44,004 [INFO] Waiting 10 seconds
+2025-07-05 15:46:53,512 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 15:48:15,785 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 15:48:15,785 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 15:48:17,849 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 15:48:17,855 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 15:48:19,860 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 15:48:21,905 [INFO] Waiting 10 seconds
+2025-07-05 15:48:24,741 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 15:58:13,711 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 15:58:13,711 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 15:58:15,826 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 15:58:15,831 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 15:58:17,836 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 15:58:19,876 [INFO] Waiting 10 seconds
+2025-07-05 15:58:21,818 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 15:58:37,107 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 15:58:37,108 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 15:58:39,155 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 15:58:39,159 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 15:58:41,164 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 15:58:43,214 [INFO] Waiting 10 seconds
+2025-07-05 15:58:45,622 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:00:06,513 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:00:06,514 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:00:08,559 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:00:08,563 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:00:10,569 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:00:12,616 [INFO] Waiting 10 seconds
+2025-07-05 16:00:14,803 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:01:45,805 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:01:45,805 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:01:47,851 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:01:47,855 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:01:49,860 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:01:51,917 [INFO] Waiting 10 seconds
+2025-07-05 16:01:54,423 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:03:22,876 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:03:22,877 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:03:24,929 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:03:24,935 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:03:26,939 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:03:28,991 [INFO] Waiting 10 seconds
+2025-07-05 16:03:38,991 [INFO] Delay of 1 seconds before the action open_app
+2025-07-05 16:03:39,997 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-05 16:03:42,038 [INFO] Waiting 10 seconds
+2025-07-05 16:03:52,038 [INFO] Delay of 2 seconds before the action open_browser
+2025-07-05 16:03:54,046 [INFO] The browser opened the URL: https://docs.microsoft.com
+2025-07-05 16:03:56,090 [INFO] Waiting 10 seconds
+2025-07-05 16:04:02,100 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:09:11,209 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:09:11,209 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:09:13,260 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:09:13,264 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:09:15,270 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:09:17,320 [INFO] Waiting 10 seconds
+2025-07-05 16:09:19,740 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:20:26,528 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:20:26,528 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:20:28,574 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:20:28,578 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:20:30,583 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:20:32,623 [INFO] Waiting 10 seconds
+2025-07-05 16:20:42,624 [INFO] Delay of 1 seconds before the action open_app
+2025-07-05 16:20:43,629 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-05 16:20:45,678 [INFO] Waiting 10 seconds
+2025-07-05 16:20:55,680 [INFO] Delay of 2 seconds before the action open_browser
+2025-07-05 16:20:57,687 [INFO] The browser opened the URL: https://admin.microsoft.com
+2025-07-05 16:20:59,735 [INFO] Waiting 10 seconds
+2025-07-05 16:21:03,042 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-05 16:31:45,698 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-05 16:31:45,698 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-05 16:31:47,735 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-05 16:31:47,740 [INFO] Delay of 2 seconds before the action open_app
+2025-07-05 16:31:49,744 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-05 16:31:51,791 [INFO] Waiting 10 seconds
+2025-07-05 16:31:55,108 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-06 11:06:42,842 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-06 11:06:42,842 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-06 11:06:44,953 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-06 11:06:44,977 [INFO] Delay of 2 seconds before the action open_app
+2025-07-06 11:06:46,982 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-06 11:06:49,008 [INFO] Waiting 10 seconds
+2025-07-06 11:06:59,009 [INFO] Delay of 1 seconds before the action open_app
+2025-07-06 11:07:00,013 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-06 11:07:02,048 [INFO] Waiting 10 seconds
+2025-07-06 11:07:12,049 [INFO] Delay of 2 seconds before the action open_browser
+2025-07-06 11:07:14,057 [INFO] The browser opened the URL: https://docs.microsoft.com
+2025-07-06 11:07:16,098 [INFO] Waiting 10 seconds
+2025-07-06 11:07:26,099 [INFO] Delay of 2 seconds before the action run_terminal_command
+2025-07-06 11:07:28,107 [INFO] The command was executed: Get-Service
+2025-07-06 11:07:30,138 [INFO] Waiting 10 seconds
+2025-07-06 11:07:40,139 [INFO] Delay of 2 seconds before the action edit_file
+2025-07-06 11:07:42,219 [INFO] Файл открыт: C:\\Users\\admin\\Documents\\admin_notes.txt
+2025-07-06 11:07:44,264 [INFO] Waiting 10 seconds
+2025-07-06 11:07:54,614 [INFO] Network request: https://github.com → 200
+2025-07-06 11:07:56,672 [INFO] Waiting 10 seconds
+2025-07-06 11:08:06,678 [INFO] Windows Settings are open
+2025-07-06 11:08:08,704 [INFO] Waiting 10 seconds
+2025-07-06 11:08:18,711 [INFO] Открыт Active Directory Users and Computers
+2025-07-06 11:08:20,751 [INFO] Waiting 10 seconds
+2025-07-06 11:08:30,753 [INFO] Pause (sleep) for 10 seconds
+2025-07-06 11:08:42,806 [INFO] Waiting 10 seconds
+2025-07-06 11:08:52,808 [INFO] Delay of 5 seconds before the action terminate
+2025-07-06 11:08:57,808 [INFO] The agent is being terminated according to the script.
+2025-07-06 11:08:57,808 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-06 12:04:34,054 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-06 12:04:34,054 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-06 12:04:36,102 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-06 12:04:36,106 [INFO] Delay of 2 seconds before the action open_app
+2025-07-06 12:04:38,111 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-06 12:04:40,163 [INFO] Waiting 10 seconds
+2025-07-06 12:04:50,165 [INFO] Delay of 1 seconds before the action open_app
+2025-07-06 12:04:51,169 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-06 12:04:53,218 [INFO] Waiting 10 seconds
+2025-07-06 12:05:03,219 [INFO] Delay of 2 seconds before the action open_browser
+2025-07-06 12:05:05,226 [INFO] The browser opened the URL: https://admin.microsoft.com
+2025-07-06 12:05:07,270 [INFO] Waiting 10 seconds
+2025-07-06 12:05:17,271 [INFO] Delay of 2 seconds before the action run_terminal_command
+2025-07-06 12:05:19,277 [INFO] The command was executed: Get-Service
+2025-07-06 12:05:21,336 [INFO] Waiting 10 seconds
+2025-07-06 12:05:31,336 [INFO] Delay of 2 seconds before the action edit_file
+2025-07-06 12:05:33,416 [INFO] Файл открыт: C:\\Users\\admin\\Documents\\admin_notes.txt
+2025-07-06 12:05:35,475 [INFO] Waiting 10 seconds
+2025-07-06 12:05:45,797 [INFO] Network request: https://www.python.org → 200
+2025-07-06 12:05:47,846 [INFO] Waiting 10 seconds
+2025-07-06 12:05:57,852 [INFO] Windows Settings are open
+2025-07-06 12:05:59,903 [INFO] Waiting 10 seconds
+2025-07-06 12:06:09,909 [INFO] Открыт Active Directory Users and Computers
+2025-07-06 12:06:11,939 [INFO] Waiting 10 seconds
+2025-07-06 12:06:15,486 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-08 17:33:30,469 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-08 17:33:30,469 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-08 17:33:32,610 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-08 17:33:32,677 [INFO] Delay of 2 seconds before the action open_app
+2025-07-08 17:33:34,683 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-08 17:33:36,736 [INFO] Waiting 10 seconds
+2025-07-08 17:33:37,333 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-08 17:49:29,888 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-08 17:49:29,888 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-08 17:49:31,941 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'open_app', 'app': 'word', 'delay': 2, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'weight': 1}, {'action': 'simulate_activity', 'weight': 1}, {'action': 'os_settings', 'weight': 1}, {'action': 'ad_utilities', 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'weight': 1}]
+2025-07-08 17:49:31,972 [INFO] Delay of 2 seconds before the action open_app
+2025-07-08 17:49:33,977 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-08 17:49:36,012 [INFO] Waiting 10 seconds
+2025-07-08 17:49:46,037 [INFO] Delay of 1 seconds before the action open_app
+2025-07-08 17:49:47,042 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-08 17:49:49,077 [INFO] Waiting 10 seconds
+2025-07-08 17:49:52,172 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-08 17:52:57,944 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-08 17:52:57,944 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-08 17:53:00,026 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'simulate_activity', 'repeatable': True, 'delay': 5, 'weight': 1}, {'action': 'open_app', 'app': 'word', 'delay': 2, 'repeatable': False, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'repeatable': False, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'repeatable': False, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'repeatable': False, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'repeatable': False, 'weight': 1}, {'action': 'os_settings', 'repeatable': False, 'weight': 1}, {'action': 'ad_utilities', 'repeatable': False, 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'repeatable': False, 'weight': 1}]
+2025-07-08 17:53:00,062 [INFO] Task simulate_activity is repeatable. Starting loop.
+2025-07-08 17:53:00,088 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:53:05,537 [INFO] Network request: https://github.com → 200
+2025-07-08 17:53:07,578 [INFO] Waiting 5 seconds for repeatable task
+2025-07-08 17:53:12,605 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:53:18,215 [INFO] Network request: https://example.com → 200
+2025-07-08 17:53:20,254 [INFO] Waiting 5 seconds for repeatable task
+2025-07-08 17:53:25,281 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:53:30,735 [INFO] Network request: https://example.com → 200
+2025-07-08 17:53:32,786 [INFO] Waiting 5 seconds for repeatable task
+2025-07-08 17:53:35,749 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-08 17:59:32,472 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-08 17:59:32,472 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-08 17:59:34,527 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'simulate_activity', 'repeatable': True, 'delay': 5, 'weight': 1}, {'action': 'open_app', 'app': 'word', 'delay': 2, 'repeatable': False, 'weight': 2}, {'action': 'open_app', 'app': 'docker', 'delay': 1, 'repeatable': False, 'weight': 2}, {'action': 'open_browser', 'urls': ['https://admin.microsoft.com', 'https://docs.microsoft.com'], 'delay': 2, 'repeatable': False, 'weight': 3}, {'action': 'run_terminal_command', 'terminal': 'powershell', 'command': 'Get-Service', 'delay': 2, 'repeatable': False, 'weight': 2}, {'action': 'edit_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt', 'delay': 2, 'repeatable': False, 'weight': 1}, {'action': 'os_settings', 'repeatable': False, 'weight': 1}, {'action': 'ad_utilities', 'repeatable': False, 'weight': 1}, {'action': 'sleep', 'seconds': 10, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'repeatable': False, 'weight': 1}]
+2025-07-08 17:59:34,532 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:59:34,562 [INFO] Delay of 2 seconds before the action open_app
+2025-07-08 17:59:36,566 [INFO] The application is running: C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
+2025-07-08 17:59:38,602 [INFO] Waiting 10 seconds
+2025-07-08 17:59:39,900 [INFO] Network request: https://github.com → 200
+2025-07-08 17:59:39,902 [INFO] Repeatable task 'simulate_activity' sleeping 5 sec
+2025-07-08 17:59:44,903 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:59:48,632 [INFO] Delay of 1 seconds before the action open_app
+2025-07-08 17:59:49,636 [INFO] The application is running: C:\Program Files\Docker\Docker\Docker Desktop.exe
+2025-07-08 17:59:50,585 [INFO] Network request: https://example.com → 200
+2025-07-08 17:59:50,585 [INFO] Repeatable task 'simulate_activity' sleeping 5 sec
+2025-07-08 17:59:51,670 [INFO] Waiting 10 seconds
+2025-07-08 17:59:55,586 [INFO] Delay of 5 seconds before the action simulate_activity
+2025-07-08 17:59:58,296 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted

@@ -33,17 +33,17 @@ VALUES ('Default Template',
         2, -- Admin role_id
         '{
           "tasks": [
-            {"action": "open_app", "app": "word", "delay": 2, "weight": 2},
-            {"action": "open_app", "app": "docker", "delay": 1, "weight": 2},
-            {"action": "open_browser", "urls": ["https://admin.microsoft.com", "https://docs.microsoft.com"], "delay": 2, "weight": 3},
-            {"action": "run_terminal_command", "terminal": "powershell", "command": "Get-Service", "delay": 2, "weight": 2},
-            {"action": "edit_file", "path": "C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt", "delay": 2, "weight": 1},
-            {"action": "simulate_activity", "weight": 1},
-            {"action": "os_settings", "weight": 1},
-            {"action": "ad_utilities", "weight": 1},
-            {"action": "sleep", "seconds": 10, "weight": 1},
-            {"action": "terminate", "delay": 5, "weight": 1}
-          ],
+            {"action": "simulate_activity", "repeatable": true, "delay": 5, "weight": 1},
+          {"action": "open_app", "app": "word", "delay": 2, "repeatable": false, "weight": 2},
+          {"action": "open_app", "app": "docker", "delay": 1, "repeatable": false, "weight": 2},
+          {"action": "open_browser", "urls": ["https://admin.microsoft.com", "https://docs.microsoft.com"], "delay": 2, "repeatable": false, "weight": 3},
+          {"action": "run_terminal_command", "terminal": "powershell", "command": "Get-Service", "delay": 2, "repeatable": false, "weight": 2},
+          {"action": "edit_file", "path": "C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\admin_notes.txt", "delay": 2, "repeatable": false, "weight": 1},
+          {"action": "os_settings", "repeatable": false, "weight": 1},
+          {"action": "ad_utilities", "repeatable": false, "weight": 1},
+          {"action": "sleep", "seconds": 10, "repeatable": false, "weight": 1},
+          {"action": "terminate", "delay": 5, "repeatable": false, "weight": 1}
+    ],
           "interval": 10
         }',
         'Windows',

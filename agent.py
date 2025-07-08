@@ -2,6 +2,7 @@ import getpass
 import logging
 import os
 import random
+import subprocess
 import time
 import uuid
 from datetime import datetime
@@ -160,7 +161,20 @@ def is_work_time(settings):
     return weekday in work_days and start <= current_time <= end
 
 
+def user_exists(username):
+    result = subprocess.run(
+        ["net", "user", username],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    return "The user name could not be found" not in result.stdout
+
+
 # === Основной цикл ===
+
+import threading
+
 
 def main():
     check_singleton()
@@ -169,7 +183,7 @@ def main():
     try:
         config = download_agent_config(AGENT_ID)
         if not config:
-            logger.error("The agent configuration was not received. Completion.")
+            logger.error("Agent config was not received. Completion.")
             return
 
         interval = config.get("custom_config", {}).get("interval", 10)
@@ -183,9 +197,21 @@ def main():
         logger.info(f"Agent: {AGENT_ID}, Interval: {interval}, Tasks: {tasks}")
         settings, paths, _ = load_config()
 
+        # === Запускаем repeatable задачи в фоне ===
+        for task in tasks:
+            if task.get("repeatable"):
+                t = threading.Thread(
+                    target=run_repeatable, args=(task, paths), daemon=True
+                )
+                t.start()
+
         if randomize:
             while True:
-                task = weighted_choice(tasks)
+                if not user_exists(username):
+                    logger.info(f"User '{username}' no longer exists. The agent is stopping.")
+                    break
+
+                task = weighted_choice([t for t in tasks if not t.get("repeatable")])
                 run_action(task, paths=paths)
 
                 send_activity(AGENT_ID, task, {"status": "ok"})
@@ -194,6 +220,13 @@ def main():
         else:
             while True:
                 for task in tasks:
+                    if task.get("repeatable"):
+                        continue  # Skip, уже крутится в фоне
+
+                    if not user_exists(username):
+                        logger.info(f"User '{username}' no longer exists. The agent is stopping.")
+                        break
+
                     run_action(task, paths=paths)
 
                     send_activity(AGENT_ID, task, {"status": "ok"})
@@ -202,6 +235,14 @@ def main():
 
     finally:
         cleanup_singleton()
+
+
+def run_repeatable(task, paths):
+    while True:
+        run_action(task, paths)
+        delay = task.get("delay", 5)
+        logger.info(f"Repeatable task '{task['action']}' sleeping {delay} sec")
+        time.sleep(delay)
 
 
 # === Запуск ===
