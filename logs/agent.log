@@ -292,3 +292,327 @@
 2025-07-13 16:21:37,607 [INFO] File created: C:\\Users\\admin\\Documents\\notes.txt
 2025-07-13 16:21:39,762 [INFO] Waiting 10 seconds
 2025-07-13 16:21:48,218 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:27:22,587 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:27:22,588 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:27:24,702 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:27:24,799 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:27:25,812 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:27:26,802 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:27:26.796661', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:27:27,845 [INFO] Waiting 10 seconds
+2025-07-13 16:27:37,920 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:27:38,927 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:27:40,964 [INFO] Waiting 10 seconds
+2025-07-13 16:27:51,045 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:27:52,050 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:27:54,115 [INFO] Waiting 10 seconds
+2025-07-13 16:28:03,353 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:28:24,987 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:28:24,988 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:28:27,082 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:29:12,581 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:29:12,589 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:29:45,240 [ERROR] The agent with the ID agent_admin_dc1ba1be30dd has already been launched! Completion.
+2025-07-13 16:29:59,717 [ERROR] The agent with the ID agent_admin_dc1ba1be30dd has already been launched! Completion.
+2025-07-13 16:32:07,407 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:32:07,408 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:32:09,533 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:32:09,632 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:32:10,643 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:32:11,611 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:32:11.604615', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:32:12,678 [INFO] Waiting 10 seconds
+2025-07-13 16:32:21,628 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:32:44,486 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:32:44,486 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:32:46,582 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:32:46,678 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:32:47,689 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:32:48,659 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:32:48.651556', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:32:49,727 [INFO] Waiting 10 seconds
+2025-07-13 16:32:59,805 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:33:00,814 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:33:02,975 [INFO] Waiting 10 seconds
+2025-07-13 16:33:09,433 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:33:44,687 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:33:44,688 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:33:46,753 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 10, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:33:46,851 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:33:47,863 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:33:48,824 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:33:48.817497', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:33:49,907 [INFO] Waiting 10 seconds
+2025-07-13 16:33:59,981 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:00,650 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:34:03,249 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:34:03,249 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:34:05,364 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:34:05,460 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:06,471 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:34:07,441 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:34:07.435018', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:34:08,504 [INFO] Waiting 0 seconds
+2025-07-13 16:34:08,585 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:09,593 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:34:11,616 [INFO] Waiting 0 seconds
+2025-07-13 16:34:11,691 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:12,696 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:34:14,757 [INFO] Waiting 0 seconds
+2025-07-13 16:34:14,899 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:15,908 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:34:17,949 [INFO] Waiting 0 seconds
+2025-07-13 16:34:18,035 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:34:19,040 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:34:21,083 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:35:04,327 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:35:04,327 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:35:06,436 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 5, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:35:06,533 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:35:07,544 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:35:08,502 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:35:08.496648', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:35:09,577 [INFO] Waiting 0 seconds
+2025-07-13 16:35:09,650 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:35:10,658 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:35:12,701 [INFO] Waiting 0 seconds
+2025-07-13 16:35:12,778 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:35:13,784 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:35:15,827 [INFO] Waiting 0 seconds
+2025-07-13 16:35:15,903 [INFO] Delay of 5 seconds before the action terminate
+2025-07-13 16:35:20,904 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:35:20,905 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:40:01,917 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:40:01,918 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:40:04,055 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:40:04,218 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:40:06,205 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:40:06.198331', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:40:39,431 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:40:41,484 [INFO] Waiting 0 seconds
+2025-07-13 16:40:41,614 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:40:42,633 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:40:45,107 [INFO] Waiting 0 seconds
+2025-07-13 16:40:47,479 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:41:10,545 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:41:12,600 [INFO] Waiting 0 seconds
+2025-07-13 16:41:12,677 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:41:12,678 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:44:13,991 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:44:13,992 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:44:16,081 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:44:16,181 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:44:17,191 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:44:18,146 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:44:18.140878', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:44:19,227 [INFO] Waiting 0 seconds
+2025-07-13 16:44:19,298 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:44:20,305 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:44:22,332 [INFO] Waiting 0 seconds
+2025-07-13 16:44:22,405 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:44:23,410 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:44:25,452 [INFO] Waiting 0 seconds
+2025-07-13 16:44:25,527 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:44:25,528 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:46:47,453 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:46:47,454 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:46:49,536 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:46:49,637 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:46:50,649 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:46:51,612 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:46:51.605855', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:46:52,692 [INFO] Waiting 0 seconds
+2025-07-13 16:46:52,781 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:46:53,788 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:46:55,818 [INFO] Waiting 0 seconds
+2025-07-13 16:46:55,896 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:46:56,909 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:46:58,960 [INFO] Waiting 0 seconds
+2025-07-13 16:46:59,362 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:46:59,364 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:47:46,296 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:47:46,297 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:47:48,623 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:47:48,721 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:47:49,732 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:47:50,707 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:47:50.700570', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:47:51,766 [INFO] Waiting 0 seconds
+2025-07-13 16:47:51,853 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:47:52,860 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:47:54,920 [INFO] Waiting 0 seconds
+2025-07-13 16:47:54,998 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:47:55,999 [ERROR] Failed to read file: [WinError 2] Не удается найти указанный файл
+2025-07-13 16:47:58,061 [INFO] Waiting 0 seconds
+2025-07-13 16:47:58,136 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:47:58,137 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:48:18,844 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:48:18,845 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:48:21,361 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:48:22,509 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:48:23,575 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:48:23,881 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:48:23.861006', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:48:25,745 [INFO] Waiting 0 seconds
+2025-07-13 16:48:25,822 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:48:26,836 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:48:28,895 [INFO] Waiting 0 seconds
+2025-07-13 16:48:28,973 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:50:06,362 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:51:02,697 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:51:02,698 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:51:04,908 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:51:05,029 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:51:06,041 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:51:07,025 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:51:07.019966', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:51:08,081 [INFO] Waiting 0 seconds
+2025-07-13 16:51:08,159 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:51:09,166 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:51:11,185 [INFO] Waiting 0 seconds
+2025-07-13 16:51:11,259 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:51:12,278 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 16:51:14,766 [INFO] Waiting 0 seconds
+2025-07-13 16:51:17,466 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:51:17,468 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:55:35,263 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:55:35,263 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:55:37,350 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:55:37,448 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:55:38,450 [ERROR] Unknown action: read_file
+2025-07-13 16:55:39,457 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:55:39.436866', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:55:40,608 [INFO] Waiting 0 seconds
+2025-07-13 16:55:42,380 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:55:43,381 [ERROR] Unknown action: read_file
+2025-07-13 16:55:45,436 [INFO] Waiting 0 seconds
+2025-07-13 16:55:45,508 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:55:46,510 [ERROR] Unknown action: read_file
+2025-07-13 16:55:48,545 [INFO] Waiting 0 seconds
+2025-07-13 16:55:48,618 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:55:48,619 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:56:53,722 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:56:53,723 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:56:55,782 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'editor': 'word', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'read_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:56:55,882 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:56:56,893 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:56:57,853 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:56:57.846537', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:56:58,931 [INFO] Waiting 0 seconds
+2025-07-13 16:56:59,136 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:57:00,147 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:57:02,187 [INFO] Waiting 0 seconds
+2025-07-13 16:57:02,258 [INFO] Delay of 1 seconds before the action read_file
+2025-07-13 16:57:03,276 [INFO] File opened for reading: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 16:57:05,319 [INFO] Waiting 0 seconds
+2025-07-13 16:57:05,395 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:57:05,397 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 16:59:37,519 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 16:59:37,519 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 16:59:39,626 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'delete_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'delete_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'delete_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 16:59:39,729 [INFO] Delay of 1 seconds before the action delete_file
+2025-07-13 16:59:40,731 [INFO] File deleted: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 16:59:41,741 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T13:59:41.734171', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 16:59:42,793 [INFO] Waiting 0 seconds
+2025-07-13 16:59:42,868 [INFO] Delay of 1 seconds before the action delete_file
+2025-07-13 16:59:43,869 [INFO] File deleted: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 16:59:45,912 [INFO] Waiting 0 seconds
+2025-07-13 16:59:45,990 [INFO] Delay of 1 seconds before the action delete_file
+2025-07-13 16:59:46,992 [INFO] File deleted: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 16:59:49,024 [INFO] Waiting 0 seconds
+2025-07-13 16:59:49,102 [INFO] The agent is being terminated according to the script.
+2025-07-13 16:59:49,103 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:00:20,884 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:00:20,885 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:00:22,978 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'This is a Word document.', 'editor': 'word', 'delay': 2, 'repeatable': False, 'weight': 1}, {'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'This is a Notepad file.', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'This is a VSCode file.', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:00:23,076 [INFO] Delay of 2 seconds before the action create_file
+2025-07-13 17:00:25,064 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:00:25.058104', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:00:25,454 [INFO] DOCX file created: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:00:27,490 [INFO] Waiting 0 seconds
+2025-07-13 17:00:27,627 [INFO] Delay of 1 seconds before the action create_file
+2025-07-13 17:00:28,630 [INFO] File created: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:00:30,670 [INFO] Waiting 0 seconds
+2025-07-13 17:00:30,743 [INFO] Delay of 1 seconds before the action create_file
+2025-07-13 17:00:31,746 [INFO] File created: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:00:33,813 [INFO] Waiting 0 seconds
+2025-07-13 17:00:34,030 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:00:34,032 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:00:57,736 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:00:57,737 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:00:59,845 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'Updated Word document content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'Updated Notepad file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'Updated VSCode file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:00:59,940 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:01:00,943 [INFO] File updated: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:01:01,927 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:01:01.921814', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:01:02,994 [INFO] Waiting 0 seconds
+2025-07-13 17:01:03,064 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:01:04,066 [INFO] File updated: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:01:06,125 [INFO] Waiting 0 seconds
+2025-07-13 17:01:06,197 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:01:07,199 [INFO] File updated: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:01:09,249 [INFO] Waiting 0 seconds
+2025-07-13 17:01:09,330 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:01:09,331 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:06:18,638 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:06:18,638 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:06:20,711 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'Updated Word document content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'Updated Notepad file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'Updated VSCode file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:06:20,822 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:06:21,825 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:06:22,818 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:06:22.812990', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:06:23,919 [INFO] Waiting 0 seconds
+2025-07-13 17:06:24,185 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:06:25,194 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:06:27,516 [INFO] Waiting 0 seconds
+2025-07-13 17:06:29,310 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:06:30,313 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:06:32,337 [INFO] Waiting 0 seconds
+2025-07-13 17:06:32,418 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:06:32,419 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:07:11,501 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:07:11,505 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:07:13,661 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'This is a Word document.', 'editor': 'word', 'delay': 2, 'repeatable': False, 'weight': 1}, {'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'This is a Notepad file.', 'editor': 'notepad', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'create_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'This is a VSCode file.', 'editor': 'vscode', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:07:13,756 [INFO] Delay of 2 seconds before the action create_file
+2025-07-13 17:07:15,757 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:07:15.751146', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:07:16,133 [INFO] DOCX file created: C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:07:18,177 [INFO] Waiting 0 seconds
+2025-07-13 17:07:18,277 [INFO] Delay of 1 seconds before the action create_file
+2025-07-13 17:07:19,280 [INFO] File created: C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:07:21,324 [INFO] Waiting 0 seconds
+2025-07-13 17:07:21,399 [INFO] Delay of 1 seconds before the action create_file
+2025-07-13 17:07:22,401 [INFO] File created: C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:07:24,453 [INFO] Waiting 0 seconds
+2025-07-13 17:07:24,534 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:07:24,535 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:07:59,287 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:07:59,288 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:08:01,387 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'Updated Word document content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'Updated Notepad file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'Updated VSCode file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:08:01,487 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:02,490 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:08:03,479 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:08:03.473916', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:08:04,542 [INFO] Waiting 0 seconds
+2025-07-13 17:08:04,613 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:05,616 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:08:07,666 [INFO] Waiting 0 seconds
+2025-07-13 17:08:07,741 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:08,743 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:08:10,778 [INFO] Waiting 0 seconds
+2025-07-13 17:08:10,851 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:08:10,852 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:08:46,903 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:08:46,903 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:08:48,987 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'Updated Word document content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'Updated Notepad file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'Updated VSCode file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:08:49,085 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:50,087 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:08:51,096 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:08:51.089288', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:08:52,141 [INFO] Waiting 0 seconds
+2025-07-13 17:08:52,213 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:53,215 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:08:55,278 [INFO] Waiting 0 seconds
+2025-07-13 17:08:55,349 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:08:56,351 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:08:58,391 [INFO] Waiting 0 seconds
+2025-07-13 17:08:58,463 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:08:58,464 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:12:51,406 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:12:51,407 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:12:53,478 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted
+2025-07-13 17:13:08,767 [INFO] A blocking file has been created agent_admin_dc1ba1be30dd.lock
+2025-07-13 17:13:08,768 [INFO] Launching the LISA agent with the configuration by ID
+2025-07-13 17:13:10,843 [INFO] Agent: agent_admin_dc1ba1be30dd, Interval: 0, Tasks: [{'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\word_doc.docx', 'content': 'Updated Word document content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\notes.txt', 'content': 'Updated Notepad file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'update_file', 'path': 'C:\\\\Users\\\\%USERNAME%\\\\Documents\\\\vscode_note.txt', 'content': 'Updated VSCode file content.', 'delay': 1, 'repeatable': False, 'weight': 1}, {'action': 'terminate', 'delay': 0, 'repeatable': False, 'weight': 1}]
+2025-07-13 17:13:10,940 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:13:11,943 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\word_doc.docx
+2025-07-13 17:13:12,947 [INFO] Heartbeat sent: {'status': 'received', 'agent_id': 'agent_admin_dc1ba1be30dd', 'timestamp': '2025-07-13T14:13:12.941964', 'message': 'Heartbeat processed successfully', 'next_heartbeat_in': 86400, 'commands': []}
+2025-07-13 17:13:13,983 [INFO] Waiting 0 seconds
+2025-07-13 17:13:14,053 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:13:15,055 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\notes.txt
+2025-07-13 17:13:17,105 [INFO] Waiting 0 seconds
+2025-07-13 17:13:17,179 [INFO] Delay of 1 seconds before the action update_file
+2025-07-13 17:13:18,182 [INFO] File updated (appended): C:\\Users\\admin\\Documents\\vscode_note.txt
+2025-07-13 17:13:20,218 [INFO] Waiting 0 seconds
+2025-07-13 17:13:20,289 [INFO] The agent is being terminated according to the script.
+2025-07-13 17:13:20,290 [INFO] The lock file agent_admin_dc1ba1be30dd.lock has been deleted

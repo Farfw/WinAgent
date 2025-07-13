@@ -23,7 +23,13 @@
       "delay": 1,
       "repeatable": false,
       "weight": 1
+    },
+    {
+      "action": "terminate",
+      "delay": 0,
+      "repeatable": false,
+      "weight": 1
     }
   ],
-  "interval": 10
+  "interval": 0
 }

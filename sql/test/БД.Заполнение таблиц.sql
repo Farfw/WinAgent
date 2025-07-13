@@ -42,7 +42,7 @@ VALUES ('agent_TESTUSERNAME_TESTMACADDRESS',
         'Test User Agent',
         'active',
         'Windows',
-        '{"interval": 10, "randomize": false}',
+        '{"interval": 0, "randomize": false}',
         'explorer.exe',
         2, -- stealth_level как Integer
         2, -- role_id (Admin)

@@ -13,7 +13,7 @@ from pathlib import Path
 import requests
 import yaml
 
-from actions import apps, files, net
+from actions import apps, net
 from client.server_api import send_activity, download_agent_config
 from utils.logger import setup_logger
 
@@ -25,9 +25,18 @@ args = parser.parse_args()
 # === Если debug-режим, чистим логи ===
 LOG_FILE = Path("agent.log")  # или тот путь, который у тебя реально
 if args.debug:
+    # Очистка логов
     if LOG_FILE.exists():
         LOG_FILE.unlink()
         print("[*] Debug mode: old logs cleared.")
+
+    # Очистка всех .lock файлов
+    for lock_file in Path().glob("*.lock"):
+        try:
+            lock_file.unlink()
+            print(f"[*] Debug mode: removed lock file {lock_file.name}")
+        except Exception as e:
+            print(f"[!] Failed to remove lock file {lock_file.name}: {e}")
 
 # === Генерация уникального AGENT_ID ===
 
@@ -128,10 +137,6 @@ def run_action(action, paths):
         else:
             logging.warning(f"Unknown terminal: {terminal}")
 
-    elif action_type == "edit_file":
-        path = os.path.expandvars(action.get("path", ""))
-        files.edit_file(path)
-
     elif action_type == "sleep":
         seconds = action.get("seconds", 60)
         logging.info(f"Pause (sleep) for {seconds} seconds")
@@ -155,35 +160,113 @@ def run_action(action, paths):
         content = action.get("content", "")
         editor = action.get("editor")
 
-        # Проверим, что есть путь и содержимое
         if not path:
             logger.warning("No path specified for create_file")
             return
 
         try:
             if editor == "word" and path.endswith(".docx"):
-                # Для DOCX используем python-docx
                 from docx import Document
                 doc = Document()
                 doc.add_paragraph(content)
                 doc.save(path)
                 logger.info(f"DOCX file created: {path}")
             else:
-                # Для TXT, markdown и прочего — обычная запись
                 with open(path, "w", encoding="utf-8") as f:
                     f.write(content)
                 logger.info(f"File created: {path}")
 
-            # После создания откроем редактор
             if editor == "notepad":
                 subprocess.Popen(["notepad.exe", path])
             elif editor == "vscode":
-                subprocess.Popen(["code", path])
+                raw_vscode_path = paths.get("apps", {}).get("vscode", "code")
+                vscode_path = os.path.expandvars(raw_vscode_path)
+                subprocess.Popen([vscode_path, path])
             elif editor == "word":
-                subprocess.Popen([paths.get("apps", {}).get("word", "WINWORD.EXE"), path])
+                raw_word_path = paths.get("apps", {}).get("word", "WINWORD.EXE")
+                word_path = os.path.expandvars(raw_word_path)
+                subprocess.Popen([word_path, path])
 
         except Exception as e:
             logger.error(f"Failed to create file: {e}")
+
+    elif action_type == "read_file":
+        path = os.path.expandvars(action.get("path", ""))
+        editor = action.get("editor")
+
+        if not path:
+            logger.warning("No path specified for read_file")
+            return
+
+        try:
+            if os.path.exists(path):
+                if editor == "notepad":
+                    subprocess.Popen(["notepad.exe", path])
+                elif editor == "vscode":
+                    raw_vscode_path = paths.get("apps", {}).get("vscode", "code")
+                    vscode_path = os.path.expandvars(raw_vscode_path)
+                    subprocess.Popen([vscode_path, path])
+                elif editor == "word":
+                    raw_word_path = paths.get("apps", {}).get("word", "WINWORD.EXE")
+                    word_path = os.path.expandvars(raw_word_path)
+                    subprocess.Popen([word_path, path])
+
+                logger.info(f"File opened for reading: {path}")
+            else:
+                logger.warning(f"File not found for reading: {path}")
+
+        except Exception as e:
+            logger.error(f"Failed to read file: {e}")
+
+    elif action_type == "update_file":
+        path = os.path.expandvars(action.get("path", ""))
+        content = action.get("content", "")
+        editor = action.get("editor")
+
+        if not path:
+            logger.warning("No path specified for update_file")
+            return
+
+        try:
+            if os.path.exists(path):
+                if editor == "word" and path.endswith(".docx"):
+                    from docx import Document
+                    doc = Document(path)
+                    if doc.paragraphs:
+                        # Добавляем к последнему параграфу
+                        doc.paragraphs[-1].add_run(content)
+                    else:
+                        # Если пусто — создаём первый параграф
+                        doc.add_paragraph(content)
+                    doc.save(path)
+                    logger.info(f"DOCX file updated (appended): {path}")
+                else:
+                    with open(path, "a", encoding="utf-8") as f:
+                        f.write(content)
+                    logger.info(f"File updated (appended): {path}")
+            else:
+                logger.warning(f"File not found for update: {path}")
+
+        except Exception as e:
+            logger.error(f"Failed to update file: {e}")
+
+
+    elif action_type == "delete_file":
+        path = os.path.expandvars(action.get("path", ""))
+
+        if not path:
+            logger.warning("No path specified for delete_file")
+            return
+
+        try:
+            if os.path.exists(path):
+                os.remove(path)
+                logger.info(f"File deleted: {path}")
+            else:
+                logger.warning(f"File not found for deletion: {path}")
+
+        except Exception as e:
+            logger.error(f"Failed to delete file: {e}")
 
 
     elif action_type == "conditional_exit":
