@@ -1,8 +1,16 @@
 # LISA Windows agent
 
 ## Description
-                                                                                                            
-## Installation
+
+WinAgent is a cross-platform user activity simulator for Windows systems, designed to emulate human-like interactions
+with applications, browsers, and system tools.
+
+## Features
+
+-Launching and managing Windows applications.  
+-Randomized behavior – Actions can be randomized to make them more human-like.  
+-Python script – runs directly through agent.py.
+-Flexible configuration, YAML role templates are used.
 
 ## Structure
 
@@ -22,4 +30,4 @@
         ├── .venv/          # Python virtual environment
         ├── .git/, .idea/   # Git and IDE configs (PyCharm)
 
-## How to use 
+

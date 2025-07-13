@@ -1,18 +1,33 @@
+import argparse
 import getpass
 import logging
 import os
 import random
 import subprocess
+import threading
 import time
 import uuid
 from datetime import datetime
 from pathlib import Path
 
+import requests
 import yaml
 
 from actions import apps, files, net
 from client.server_api import send_activity, download_agent_config
 from utils.logger import setup_logger
+
+# === Парсим аргументы ===
+parser = argparse.ArgumentParser(description="LISA Agent")
+parser.add_argument("--debug", action="store_true", help="Run agent in debug mode and clean logs before start")
+args = parser.parse_args()
+
+# === Если debug-режим, чистим логи ===
+LOG_FILE = Path("agent.log")  # или тот путь, который у тебя реально
+if args.debug:
+    if LOG_FILE.exists():
+        LOG_FILE.unlink()
+        print("[*] Debug mode: old logs cleared.")
 
 # === Генерация уникального AGENT_ID ===
 
@@ -135,6 +150,41 @@ def run_action(action, paths):
     elif action_type == "ad_utilities":
         apps.open_ad_utilities()
 
+    elif action_type == "create_file":
+        path = os.path.expandvars(action.get("path", ""))
+        content = action.get("content", "")
+        editor = action.get("editor")
+
+        # Проверим, что есть путь и содержимое
+        if not path:
+            logger.warning("No path specified for create_file")
+            return
+
+        try:
+            if editor == "word" and path.endswith(".docx"):
+                # Для DOCX используем python-docx
+                from docx import Document
+                doc = Document()
+                doc.add_paragraph(content)
+                doc.save(path)
+                logger.info(f"DOCX file created: {path}")
+            else:
+                # Для TXT, markdown и прочего — обычная запись
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(content)
+                logger.info(f"File created: {path}")
+
+            # После создания откроем редактор
+            if editor == "notepad":
+                subprocess.Popen(["notepad.exe", path])
+            elif editor == "vscode":
+                subprocess.Popen(["code", path])
+            elif editor == "word":
+                subprocess.Popen([paths.get("apps", {}).get("word", "WINWORD.EXE"), path])
+
+        except Exception as e:
+            logger.error(f"Failed to create file: {e}")
+
 
     elif action_type == "conditional_exit":
         condition = action.get("condition")
@@ -171,9 +221,35 @@ def user_exists(username):
     return "The user name could not be found" not in result.stdout
 
 
-# === Основной цикл ===
+def send_heartbeat():
+    while True:
+        payload = {
+            "agent_id": AGENT_ID,
+            "username": username,
+            "timestamp": datetime.utcnow().isoformat(),
+            "role": "Admin",
+            "system_info": {
+                "platform": os.name
+            },
+            "status": "active"
+        }
 
-import threading
+        # Используй свой URL и API ключ, если есть
+        url = "http://localhost:8000/api/agents/heartbeat"
+        headers = {"Authorization": "Bearer sk-agent-heartbeat-key-2024"}
+
+        try:
+            response = requests.post(url, json=payload, headers=headers, timeout=10)
+            response.raise_for_status()
+            logger.info(f"Heartbeat sent: {response.json()}")
+        except Exception as e:
+            logger.error(f"Failed to send heartbeat: {e}")
+
+        # Спим 24 часа = 86400 сек
+        time.sleep(86400)
+
+
+# === Основной цикл ===
 
 
 def main():
@@ -196,6 +272,10 @@ def main():
 
         logger.info(f"Agent: {AGENT_ID}, Interval: {interval}, Tasks: {tasks}")
         settings, paths, _ = load_config()
+
+        # === Heartbeat поток ===
+        t_heartbeat = threading.Thread(target=send_heartbeat, daemon=True)
+        t_heartbeat.start()
 
         # === Запускаем repeatable задачи в фоне ===
         for task in tasks:
